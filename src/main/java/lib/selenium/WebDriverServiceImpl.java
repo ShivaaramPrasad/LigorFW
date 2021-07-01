@@ -133,6 +133,33 @@ public class WebDriverServiceImpl implements WebDriverService{
 			System.out.println("Unknown exception occured while entering "+data+" "+keyvalue+" in the field :"+ele);
 		}
 	}
+	
+	
+	public void typeOnlyKeys(WebElement ele, eKeys keyvalue) {
+		try {
+			WebElement element = isElementVisible(ele);
+			switch (keyvalue) {
+			case tab: ele.sendKeys(Keys.TAB);
+			System.out.println("The key: "+keyvalue+" entered successfully in the field :"+ele);
+            case Shift: ele.sendKeys(Keys.SHIFT);
+			System.out.println("The key: "+keyvalue+" entered successfully in the field :"+ele);
+            case enter: ele.sendKeys(Keys.ENTER);
+			System.out.println("The key: "+keyvalue+" entered successfully in the field :"+ele);
+            case home:ele.sendKeys(Keys.HOME);
+			System.out.println("The key: "+keyvalue+" entered successfully in the field :"+ele);
+            case space:	ele.sendKeys(Keys.SPACE);
+			System.out.println("The key: "+keyvalue+" entered successfully in the field :"+ele);
+			default:
+				break;
+
+			}
+		} catch (InvalidElementStateException e) {
+			System.out.println("The data: "+keyvalue+" could not be entered in the field :"+ele);
+		} catch (WebDriverException e) {
+			System.out.println("Unknown exception occured while entering "+keyvalue+" in the field :"+ele);
+		}
+	}
+
 
 	public void click(WebElement ele) {
 		WebElement element = wait.withMessage("Element is not clickable").until(ExpectedConditions.elementToBeClickable(ele));

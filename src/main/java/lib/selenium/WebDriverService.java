@@ -64,6 +64,16 @@ public interface WebDriverService {
 	 */
 
 	public void type(WebElement ele, String data,eKeys keyvalue) ;
+	
+	/**
+	 * This method will enter key in the given text field or element
+	 * @param ele   - The Webelement (text field) in which the key to be entered
+	 * @param data  - The key to be sent to the webelement
+	 * @author Shivaaram
+	 * @throws ElementNotVisibleException		 * 
+	 */	
+	public void typeOnlyKeys(WebElement ele, eKeys keyvalue);
+
 
 	/**
 	 * 
