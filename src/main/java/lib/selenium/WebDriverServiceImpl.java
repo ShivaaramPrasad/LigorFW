@@ -66,6 +66,8 @@ public class WebDriverServiceImpl implements WebDriverService{
 		case partialLinkText: return driver.findElement(By.partialLinkText(locValue));
 		case tagName: return driver.findElement(By.tagName(locValue));
 		case xpath:	return driver.findElement(By.xpath(locValue));
+		case css:	return driver.findElement(By.cssSelector(locValue));
+
 		default:
 			break;
 		}
